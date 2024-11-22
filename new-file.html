@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Principal Futuriste</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" crossorigin="anonymous">
+</head>
+<body>
+  <div id="main-menu" class="menu">
+    <h1 class="title">Menu Principal</h1>
+    <ul class="menu-options">
+      <li onclick="startGame()">🏆 Succès</li>
+      <li>💼 Carrière <small>travail, finances</small></li>
+      <li>📚 Apprentissage <small>développement personnel, éducation</small></li>
+      <li onclick="viewExtras()"><i class="fa-regular fa-lemon"></i> Productivité</li>   
+      <li>🤝 Contributions <small>bénévolat, impact social</small></li>
+      <li>💪 Santé <small>forme physique, alimentation</small></li>
+      <li>👨‍👩‍👧‍👦 Relations <small>famille, amis</small></li>
+      <li>🎨 Loisirs <small>hobbies, voyages</small></li>
+      <li>🧘‍♀️ Spiritualité <small>pratiques personnelles, bien-être mental</small></li>
+      <li onclick="viewOptions()">⚙️ Options</li>
+      <li onclick="quitGame()">❌ Quitter le jeu</li>
+    </ul>
+  </div>
+
+  <div id="options" class="hidden">
+    <h1 class="title">Options</h1>
+    
+    <!-- Formulaire de préférences générales -->
+    <form id="general-preferences" class="form">
+      <h2>Préférences Générales</h2>
+      <label for="theme">Choisir un thème :</label>
+      <select id="theme">
+        <option value="futuriste">Futuriste</option>
+        <option value="gothique">Gothique</option>
+        <option value="minimaliste">Minimaliste</option>
+      </select>
+      <label for="difficulty">Niveau de difficulté :</label>
+      <select id="difficulty">
+        <option value="facile">Facile</option>
+        <option value="normal">Normal</option>
+        <option value="difficile">Difficile</option>
+      </select>
+      <button type="button" onclick="saveGeneralPreferences()">Sauvegarder</button>
+    </form>
+
+    <!-- Formulaire de retour utilisateur -->
+    <form id="user-feedback" class="form">
+      <h2>Retour sur l'Expérience Utilisateur</h2>
+      <label for="feedback">Qu'avez-vous pensé du jeu ?</label>
+      <textarea id="feedback" rows="4" placeholder="Partagez vos impressions ici..."></textarea>
+      <label for="rating">Évaluation :</label>
+      <input type="number" id="rating" min="1" max="5" placeholder="1 à 5">
+      <button type="button" onclick="saveUserFeedback()">Envoyer</button>
+    </form>
+
+    <!-- Formulaire de réglages personnalisés -->
+    <form id="custom-settings" class="form">
+      <h2>Réglages Personnalisés</h2>
+      <label for="music-volume">Volume de la musique :</label>
+      <input type="range" id="music-volume" min="0" max="100" value="50">
+      <label for="sfx-volume">Volume des effets sonores :</label>
+      <input type="range" id="sfx-volume" min="0" max="100" value="50">
+      <label for="controls">Configuration des contrôles :</label>
+      <select id="controls">
+        <option value="qwerty">QWERTY</option>
+        <option value="azerty">AZERTY</option>
+        <option value="custom">Personnalisé</option>
+      </select>
+      <button type="button" onclick="saveCustomSettings()">Appliquer</button>
+    </form>
+
+    <button class="back-btn" onclick="returnToMenu()">Retour au Menu Principal</button>
+  </div>
+
+  <div id="personnage" class="hidden">
+    <h1 class="title">Carte Personnage</h1>
+    <div class="dashboard-container">
+      <div class="dashboard-column">
+        <i class="fas fa-heartbeat"></i>
+        <h3>Progression</h3>
+        <p id="progress-data">0%</p>
+      </div>
+      <div class="dashboard-column">
+        <i class="fas fa-coins"></i>
+        <h3>Geo Collectés</h3>
+        <p id="geo-data">0</p>
+      </div>
+      <div class="dashboard-column">
+        <i class="fas fa-bolt"></i>
+        <h3>Sorts Lancés</h3>
+        <p id="spells-data">0</p>
+      </div>
+    </div>
+    <button class="back-btn" onclick="returnToMenu()">Retour au Menu Principal</button>
+  </div>
+
+  <div id="extras" class="hidden">
+    <h1 class="title">Extras</h1>
+    <div class="iframe-container">
+      <iframe 
+        src="https://calendar.google.com/calendar/embed?height=333&wkst=2&ctz=Europe%2FParis&showPrint=0&showTitle=0&showDate=0&showTz=0&mode=AGENDA&src=cGF0cmljay5hc3NpczE5MkBnbWFpbC5jb20&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4uZnJlbmNoI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%2300cc8b&color=%23E4C441&color=%23F4511E" 
+        width="100%" 
+        height="400" 
+        frameborder="0" 
+        scrolling="no">
+      </iframe>
+      <iframe 
+        src="https://app.flocus.com/" 
+        width="100%" 
+        height="400" 
+        frameborder="0">
+      </iframe>
+    </div>
+    <button class="back-btn" onclick="returnToMenu()">Retour au Menu Principal</button>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Principal Futuriste</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+
+
+  <script src="scripts.js"></script>
+</body>
+</html>

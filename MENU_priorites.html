@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Priorités pour être N°1</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(180deg, #0a0a0f, #1a1a3c);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #menu {
+      text-align: center;
+      width: 80%;
+      max-width: 800px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #menu h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #00cc99;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      font-size: 1.5rem;
+      margin: 15px 0;
+      padding: 15px 20px;
+      border: 2px solid #00cc99;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      animation: bounceIn 0.8s ease-out;
+    }
+
+    @keyframes bounceIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      50% {
+        opacity: 0.5;
+        transform: scale(1.1);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .menu-item:hover {
+      background: rgba(0, 204, 153, 0.2);
+      transform: scale(1.05);
+    }
+
+    .menu-item span {
+      color: #00cc99;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .emoji {
+      font-size: 1.8rem;
+      margin-right: 15px;
+    }
+
+    footer {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      color: #ddd;
+      animation: fadeIn 2s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div id="menu">
+    <h1>Priorités pour être N°1</h1>
+    <div class="menu-item" title="Une société en bonne santé est productive et performante.">
+      <span class="emoji">💊</span>
+      <span>#1</span> Santé et Bien-être
+    </div>
+    <div class="menu-item" title="La clé pour l'innovation et un leadership éclairé.">
+      <span class="emoji">🎓</span>
+      <span>#2</span> Éducation et Développement des Compétences
+    </div>
+    <div class="menu-item" title="Être en tête de l'innovation garantit un avantage mondial.">
+      <span class="emoji">🤖</span>
+      <span>#3</span> Innovation et Technologies de Pointe
+    </div>
+    <div class="menu-item" title="Gouvernance forte pour diriger avec vision et autorité.">
+      <span class="emoji">🌍</span>
+      <span>#4</span> Leadership et Influence Mondiale
+    </div>
+    <div class="menu-item" title="Maintenir un équilibre pour garantir des ressources futures.">
+      <span class="emoji">🌱</span>
+      <span>#5</span> Environnement et Durabilité
+    </div>
+    <div class="menu-item" title="Une base économique solide pour la compétitivité.">
+      <span class="emoji">💰</span>
+      <span>#6</span> Stabilité Économique et Croissance
+    </div>
+    <div class="menu-item" title="Nécessaire pour la coopération et la prospérité à grande échelle.">
+      <span class="emoji">☮️</span>
+      <span>#7</span> Sécurité et Paix Globale
+    </div>
+    <footer>
+      Axé sur l'excellence pour un succès mondial
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener('click', (event) => {
+      const menu = document.getElementById('menu');
+      if (!menu.contains(event.target)) {
+        // Si le clic est en dehors du menu, passer en plein écran
+        toggleFullScreen();
+      }
+    });
+
+    function toggleFullScreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch((err) => {
+          console.error(`Erreur lors de la tentative de passage en plein écran: ${err.message}`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    }
+  </script>
+</body>
+</html>
